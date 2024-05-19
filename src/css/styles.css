@@ -29,7 +29,15 @@
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0.04em; */
-    /* text-align: left; */
+  /* text-align: left; */
+}
+
+.container {
+  max-width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 textarea,
@@ -42,10 +50,11 @@ input {
   justify-content: center;
   gap: 8px;
   margin-top: 36px;
+  margin-bottom: 32px;
 }
 
 .search-img-input {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   border-radius: 4px;
   width: 272px;
   height: 40px;
@@ -70,12 +79,11 @@ input {
   border-radius: 4px;
   padding: 8px 16px;
   width: 91px;
-  /* height: 40px; */
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: 0.04em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
   background-color: #4e75ff;
   color: #fff;
   border: none;
@@ -83,4 +91,26 @@ input {
 
 .submit-btn:hover {
   background-color: #6c8cff;
-} 
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.gallery-item {
+  flex-basis: calc((100% - 48px) / 3);
+  border-bottom: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #808080;
+}
+
+.description {
+  padding: 4px 20px;
+  display: flex;
+  gap: 4px;
+  text-align: center;
+}
+
+/* опис картки через simplelightbox? */
