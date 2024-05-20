@@ -2,6 +2,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+
 export function renderImages(images) {
   return images
     .map(
@@ -9,6 +10,7 @@ export function renderImages(images) {
       <a class="gallery-link" href="${img.webformatURL}">
         <img 
           class="gallery-image" 
+          width="360"
           src="${img.largeImageURL}" 
           alt="${img.tags}" 
           />
@@ -19,7 +21,6 @@ export function renderImages(images) {
       <li><strong>Views</strong> ${img.views}</li>
       <li><strong>Comments</strong> ${img.comments}</li>
       <li><strong>Downloads</strong> ${img.downloads}</li>
-
       </ul>
     </li>`
     )
