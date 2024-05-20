@@ -1,13 +1,12 @@
 'use strict';
 
 import { fetchImages } from './js/pixabay-api';
-import { renderImages, showError } from './js/render-functions';
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+import { renderImages, showError, clearGallery, showLoader, hideLoader, initializeLightbox, refreshLightbox } from './js/render-functions';
+
 
 const form = document.querySelector('.form');
 const searchInput = document.querySelector('.search-img-input');
-const gallery = document.querySelector('.gallery');
+// const loader = document.getElementById('loader');
 
 form.addEventListener('submit', handleSubmit);
 
@@ -19,7 +18,9 @@ function handleSubmit(event) {
   if (!query) {
     showError('Please enter a search term');
     return;
-  }
+    }
+    clearGallery();
+    showLoader();
 
   fetchImages(query)
     .then(images => {
@@ -28,15 +29,18 @@ function handleSubmit(event) {
           'Sorry, there are no images matching your search query. Please try again!'
         );
       } else {
-          gallery.innerHTML = renderImages(images);
-          const galleryLightbox = new SimpleLightbox('.gallery a', {
-            captionsData: 'alt',
-            captionDelay: 250,
-});
+          renderImages(images);
+          initializeLightbox();
+          refreshLightbox();
       }
     })
     .catch(error => {
       showError('An error occured while fetching images');
       console.error(error);
-    });
+    })
+      .finally(() => {
+          hideLoader();
+      });
+
 }
+
