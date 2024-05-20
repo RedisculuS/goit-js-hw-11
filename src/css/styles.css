@@ -22,16 +22,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.body {
-  /* margin: 0 auto; */
-  /* font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.04em; */
-  /* text-align: left; */
-}
-
 .container {
   max-width: 1158px;
   padding-left: 15px;
@@ -114,9 +104,8 @@ input {
 }
 
 a {
-      display: inline-block;
-        /* width: 360px; */
-        height: 232px;
+  display: inline-block;
+  height: 232px;
 }
 
 .gallery-image {
@@ -128,9 +117,7 @@ a {
 
 .loader {
   border: 16px solid #f3f3f3;
-  /* Light grey */
   border-top: 16px solid #3498db;
-  /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;

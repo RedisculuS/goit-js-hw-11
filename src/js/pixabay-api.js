@@ -11,14 +11,12 @@ export function fetchImages(query) {
   return fetch(url)
     .then(response => {
       if (!response.ok) {
-        // throw new Error('Failed to fetch images');
         throw new Error(`Error: ${err.message}`);
       }
       return response.json();
     })
     .then(data => data.hits)
     .catch(error => {
-      //   console.log(error);
       console.log('Fetch error:', error);
       return [];
     });

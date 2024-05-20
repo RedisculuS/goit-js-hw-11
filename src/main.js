@@ -6,7 +6,6 @@ import { renderImages, showError, clearGallery, showLoader, hideLoader, initiali
 
 const form = document.querySelector('.form');
 const searchInput = document.querySelector('.search-img-input');
-// const loader = document.getElementById('loader');
 
 form.addEventListener('submit', handleSubmit);
 
